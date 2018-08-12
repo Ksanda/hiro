@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Hiro</class>
+ <widget class="QMainWindow" name="Hiro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1064</width>
+    <height>633</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Hiro</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1064</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHiro">
+    <property name="title">
+     <string>Hlavní nabídka</string>
+    </property>
+    <addaction name="actionO_Programu"/>
+    <addaction name="actionImport_nastaven"/>
+    <addaction name="actionExport_nastaven"/>
+    <addaction name="actionKonec"/>
+   </widget>
+   <addaction name="menuHiro"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionO_Programu">
+   <property name="text">
+    <string>O Programu</string>
+   </property>
+  </action>
+  <action name="actionImport_nastaven">
+   <property name="text">
+    <string>Import nastavení</string>
+   </property>
+  </action>
+  <action name="actionExport_nastaven">
+   <property name="text">
+    <string>Export nastavení</string>
+   </property>
+  </action>
+  <action name="actionKonec">
+   <property name="text">
+    <string>Konec</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
