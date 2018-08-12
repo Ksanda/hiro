@@ -12,6 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -29,6 +31,11 @@ public:
     QAction *actionExport_nastaven;
     QAction *actionKonec;
     QWidget *centralWidget;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QLabel *label_2;
+    QLabel *label_3;
     QMenuBar *menuBar;
     QMenu *menuHiro;
     QToolBar *mainToolBar;
@@ -49,6 +56,30 @@ public:
         actionKonec->setObjectName(QStringLiteral("actionKonec"));
         centralWidget = new QWidget(Hiro);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(410, 200, 201, 31));
+        lineEdit = new QLineEdit(centralWidget);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(350, 240, 321, 21));
+        lineEdit->setLayoutDirection(Qt::RightToLeft);
+        lineEdit->setStyleSheet(QStringLiteral("align: right;"));
+        lineEdit->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        lineEdit_2 = new QLineEdit(centralWidget);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(350, 270, 321, 21));
+        lineEdit_2->setLayoutDirection(Qt::RightToLeft);
+        lineEdit_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(220, 240, 131, 20));
+        label_2->setStyleSheet(QStringLiteral("background: white; padding: 1px; border: 1px solid;"));
+        label_2->setMargin(2);
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(220, 270, 131, 20));
+        label_3->setStyleSheet(QStringLiteral("background: white; padding: 1px; border: 1px solid;"));
+        label_3->setMargin(2);
         Hiro->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Hiro);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -81,6 +112,9 @@ public:
         actionImport_nastaven->setText(QApplication::translate("Hiro", "Import nastaven\303\255", nullptr));
         actionExport_nastaven->setText(QApplication::translate("Hiro", "Export nastaven\303\255", nullptr));
         actionKonec->setText(QApplication::translate("Hiro", "Konec", nullptr));
+        label->setText(QApplication::translate("Hiro", "Do syst\303\251mu se mus\303\255te p\305\231ihl\303\241sit", nullptr));
+        label_2->setText(QApplication::translate("Hiro", " U\305\276ivatelsk\303\251 jm\303\251no", nullptr));
+        label_3->setText(QApplication::translate("Hiro", " Heslo", nullptr));
         menuHiro->setTitle(QApplication::translate("Hiro", "Hlavn\303\255 nab\303\255dka", nullptr));
     } // retranslateUi
 
