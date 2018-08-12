@@ -30,7 +30,8 @@ HEADERS += \
         hiro.h
 
 FORMS += \
-        hiro.ui
+        hiro.ui \
+    administrace.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
