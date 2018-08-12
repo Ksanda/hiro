@@ -15,6 +15,9 @@ public:
     explicit Hiro(QWidget *parent = nullptr);
     ~Hiro();
 
+private slots:
+    void on_butt_end_clicked();
+
 private:
     Ui::Hiro *ui;
 };

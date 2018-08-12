@@ -215,6 +215,7 @@ DIST          = ../../../Qt/5.11.1/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/spec_post.prf \
+		../hiro/.qmake.stash \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/mac/sdk.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/toolchain.prf \
@@ -257,7 +258,7 @@ EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ACTIVE_ARCHS), $(EXPORT_ACTIVE_
 first: all
 ####### Build rules
 
-$(TARGET): ui_hiro.h $(OBJECTS)  
+$(TARGET): ui_hiro.h ui_administrace.h $(OBJECTS)  
 	@test -d hiro.app/Contents/MacOS/ || mkdir -p hiro.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -421,6 +422,7 @@ Makefile: ../hiro/hiro.pro ../../../Qt/5.11.1/clang_64/mkspecs/macx-clang/qmake.
 		../../../Qt/5.11.1/clang_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/mac/sdk.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/toolchain.prf \
@@ -613,6 +615,7 @@ Makefile: ../hiro/hiro.pro ../../../Qt/5.11.1/clang_64/mkspecs/macx-clang/qmake.
 ../../../Qt/5.11.1/clang_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.11.1/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/5.11.1/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.11.1/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.11.1/clang_64/mkspecs/features/mac/sdk.prf:
 ../../../Qt/5.11.1/clang_64/mkspecs/features/toolchain.prf:
@@ -676,7 +679,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../../../Qt/5.11.1/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../hiro/hiro.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../hiro/main.cpp ../hiro/hiro.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../hiro/hiro.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../hiro/hiro.ui ../hiro/administrace.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -686,6 +689,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r hiro.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -721,12 +725,16 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_hiro.h
+compiler_uic_make_all: ui_hiro.h ui_administrace.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_hiro.h
+	-$(DEL_FILE) ui_hiro.h ui_administrace.h
 ui_hiro.h: ../hiro/hiro.ui \
 		../../../Qt/5.11.1/clang_64/bin/uic
 	/Users/starkbook/Qt/5.11.1/clang_64/bin/uic ../hiro/hiro.ui -o ui_hiro.h
+
+ui_administrace.h: ../hiro/administrace.ui \
+		../../../Qt/5.11.1/clang_64/bin/uic
+	/Users/starkbook/Qt/5.11.1/clang_64/bin/uic ../hiro/administrace.ui -o ui_administrace.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:

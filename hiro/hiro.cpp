@@ -12,3 +12,8 @@ Hiro::~Hiro()
 {
     delete ui;
 }
+
+void Hiro::on_butt_end_clicked()
+{
+    hide();
+}
