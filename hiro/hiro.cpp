@@ -28,6 +28,4 @@ void Hiro::on_Hiro_toolButtonStyleChanged(const Qt::ToolButtonStyle &toolButtonS
 void Hiro::on_actionAdministrace_triggered()
 {
     Administrace administrace;
-    administrace.setModal(true);
-    administrace.exec();
 }
