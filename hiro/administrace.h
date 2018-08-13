@@ -1,19 +1,19 @@
-#ifndef HIRO_H
-#define HIRO_H
+#ifndef ADMINISTRACE_H
+#define ADMINISTRACE_H
 
 #include <QMainWindow>
 
 namespace Ui {
-class Hiro;
+class Administrace;
 }
 
-class Hiro : public QMainWindow
+class Administrace : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit Hiro(QWidget *parent = nullptr);
-    ~Hiro();
+    explicit Administrace(QWidget *parent = nullptr);
+    ~Administrace();
 
 private slots:
     void on_butt_end_clicked();
@@ -23,7 +23,7 @@ private slots:
     void on_actionAdministrace_triggered();
 
 private:
-    Ui::Hiro *ui;
+    Ui::Administrace *ui;
 };
 
-#endif // HIRO_H
+#endif // ADMINISTRACE_H

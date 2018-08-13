@@ -157,6 +157,7 @@
      <string>Hlavní nabídka</string>
     </property>
     <addaction name="actionO_Programu"/>
+    <addaction name="actionAdministrace"/>
     <addaction name="actionImport_nastaven"/>
     <addaction name="actionExport_nastaven"/>
     <addaction name="actionKonec"/>
@@ -190,6 +191,11 @@
   <action name="actionKonec">
    <property name="text">
     <string>Konec</string>
+   </property>
+  </action>
+  <action name="actionAdministrace">
+   <property name="text">
+    <string>Administrace</string>
    </property>
   </action>
  </widget>

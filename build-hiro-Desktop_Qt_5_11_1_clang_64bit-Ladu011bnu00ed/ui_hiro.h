@@ -31,6 +31,7 @@ public:
     QAction *actionImport_nastaven;
     QAction *actionExport_nastaven;
     QAction *actionKonec;
+    QAction *actionAdministrace;
     QWidget *centralWidget;
     QLabel *label;
     QLineEdit *input_nickname;
@@ -58,6 +59,8 @@ public:
         actionExport_nastaven->setObjectName(QStringLiteral("actionExport_nastaven"));
         actionKonec = new QAction(Hiro);
         actionKonec->setObjectName(QStringLiteral("actionKonec"));
+        actionAdministrace = new QAction(Hiro);
+        actionAdministrace->setObjectName(QStringLiteral("actionAdministrace"));
         centralWidget = new QWidget(Hiro);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
@@ -110,6 +113,7 @@ public:
 
         menuBar->addAction(menuHiro->menuAction());
         menuHiro->addAction(actionO_Programu);
+        menuHiro->addAction(actionAdministrace);
         menuHiro->addAction(actionImport_nastaven);
         menuHiro->addAction(actionExport_nastaven);
         menuHiro->addAction(actionKonec);
@@ -126,6 +130,7 @@ public:
         actionImport_nastaven->setText(QApplication::translate("Hiro", "Import nastaven\303\255", nullptr));
         actionExport_nastaven->setText(QApplication::translate("Hiro", "Export nastaven\303\255", nullptr));
         actionKonec->setText(QApplication::translate("Hiro", "Konec", nullptr));
+        actionAdministrace->setText(QApplication::translate("Hiro", "Administrace", nullptr));
         label->setText(QApplication::translate("Hiro", "Do syst\303\251mu se mus\303\255te p\305\231ihl\303\241sit", nullptr));
         label_2->setText(QApplication::translate("Hiro", " U\305\276ivatelsk\303\251 jm\303\251no", nullptr));
         label_3->setText(QApplication::translate("Hiro", " Heslo", nullptr));

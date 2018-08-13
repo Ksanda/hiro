@@ -27,7 +27,8 @@ SOURCES += \
         hiro.cpp
 
 HEADERS += \
-        hiro.h
+        hiro.h \
+    administrace.h
 
 FORMS += \
         hiro.ui \

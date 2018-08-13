@@ -1,0 +1,14 @@
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\bin\Debug\WPFTestAPP.exe.config
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\bin\Debug\WPFTestAPP.exe
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\bin\Debug\WPFTestAPP.pdb
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP.csprojResolveAssemblyReference.cache
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\MainWindow.g.cs
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\App.g.cs
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP_MarkupCompile.cache
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP_MarkupCompile.lref
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\MainWindow.baml
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP.g.resources
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP.Properties.Resources.resources
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP.csproj.GenerateResource.Cache
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP.exe
+E:\Visual Studio Projects\WPFTestAPP\WPFTestAPP\obj\Debug\WPFTestAPP.pdb
