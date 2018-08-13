@@ -51,14 +51,10 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../hiro/main.cpp \
-		../hiro/hiro.cpp \
-		../hiro/administrace.cpp moc_hiro.cpp \
-		moc_administrace.cpp
+		../hiro/hiro.cpp moc_hiro.cpp
 OBJECTS       = main.o \
 		hiro.o \
-		administrace.o \
-		moc_hiro.o \
-		moc_administrace.o
+		moc_hiro.o
 DIST          = ../../../Qt/5.11.1/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/qdevice.pri \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/device_config.prf \
@@ -247,10 +243,8 @@ DIST          = ../../../Qt/5.11.1/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.11.1/clang_64/mkspecs/features/lex.prf \
-		../hiro/hiro.pro ../hiro/hiro.h \
-		../hiro/administrace.h ../hiro/main.cpp \
-		../hiro/hiro.cpp \
-		../hiro/administrace.cpp
+		../hiro/hiro.pro ../hiro/hiro.h ../hiro/main.cpp \
+		../hiro/hiro.cpp
 QMAKE_TARGET  = hiro
 DESTDIR       = 
 TARGET        = hiro.app/Contents/MacOS/hiro
@@ -683,8 +677,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.11.1/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../hiro/hiro.h ../hiro/administrace.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../hiro/main.cpp ../hiro/hiro.cpp ../hiro/administrace.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../hiro/hiro.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../hiro/main.cpp ../hiro/hiro.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../hiro/hiro.ui ../hiro/administrace.ui $(DISTDIR)/
 
 
@@ -717,22 +711,15 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/5.11.1/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.11 -Wall -W -dM -E -o moc_predefs.h ../../../Qt/5.11.1/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_hiro.cpp moc_administrace.cpp
+compiler_moc_header_make_all: moc_hiro.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_hiro.cpp moc_administrace.cpp
+	-$(DEL_FILE) moc_hiro.cpp
 moc_hiro.cpp: ../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../hiro/hiro.h \
 		moc_predefs.h \
 		../../../Qt/5.11.1/clang_64/bin/moc
 	/Users/starkbook/Qt/5.11.1/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/starkbook/Qt/5.11.1/clang_64/mkspecs/macx-clang -I/Users/starkbook/Desktop/projectHiro/hiro -I/Users/starkbook/Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers -I/Users/starkbook/Qt/5.11.1/clang_64/lib/QtGui.framework/Headers -I/Users/starkbook/Qt/5.11.1/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/starkbook/Qt/5.11.1/clang_64/lib ../hiro/hiro.h -o moc_hiro.cpp
-
-moc_administrace.cpp: ../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../hiro/administrace.h \
-		moc_predefs.h \
-		../../../Qt/5.11.1/clang_64/bin/moc
-	/Users/starkbook/Qt/5.11.1/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/starkbook/Qt/5.11.1/clang_64/mkspecs/macx-clang -I/Users/starkbook/Desktop/projectHiro/hiro -I/Users/starkbook/Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers -I/Users/starkbook/Qt/5.11.1/clang_64/lib/QtGui.framework/Headers -I/Users/starkbook/Qt/5.11.1/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/starkbook/Qt/5.11.1/clang_64/lib ../hiro/administrace.h -o moc_administrace.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -771,24 +758,11 @@ main.o: ../hiro/main.cpp ../hiro/hiro.h \
 hiro.o: ../hiro/hiro.cpp ../hiro/hiro.h \
 		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_hiro.h \
-		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../hiro/administrace.h
+		ui_hiro.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o hiro.o ../hiro/hiro.cpp
-
-administrace.o: ../hiro/administrace.cpp ../hiro/administrace.h \
-		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../../Qt/5.11.1/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o administrace.o ../hiro/administrace.cpp
 
 moc_hiro.o: moc_hiro.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_hiro.o moc_hiro.cpp
-
-moc_administrace.o: moc_administrace.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_administrace.o moc_administrace.cpp
 
 ####### Install
 

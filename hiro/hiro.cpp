@@ -1,7 +1,6 @@
 #include "hiro.h"
 #include "ui_hiro.h"
-#include <QMessageBox>
-#include "administrace.h"
+
 
 Hiro::Hiro(QWidget *parent) :
     QMainWindow(parent),
@@ -27,5 +26,4 @@ void Hiro::on_Hiro_toolButtonStyleChanged(const Qt::ToolButtonStyle &toolButtonS
 
 void Hiro::on_actionAdministrace_triggered()
 {
-    Administrace administrace;
 }
